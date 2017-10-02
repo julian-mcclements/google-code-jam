@@ -1,0 +1,45 @@
+1. DataSet.read returns nested list of AlienNumberTestCase
+
+	AlienNumberTestCase class has following read-only properties
+		* AlienNumber
+		* SourceLanguage
+		* TargetLanguage
+
+		TestCase list passed to AlienNumberConvertor.convert
+
+2.  For each test case
+
+	Get number base (RADIX) for source language
+
+	Map source language digits onto matching decimal values
+
+	For each digit in Alien Number
+		Multiply digit by base**exponent (where exponent = len(AlienNumber) - index of digit in AlienNumber)
+		Add product to accumulator
+	Final value of accumulator is the matching decimal number for the alien number. This is referred to as DecimalNumber
+
+	Get number base (RADIX) for target language
+
+	Map target language digits onto matching decimal values
+
+	Repeatedly divide DecimalNumber by base of target language to get list of decimal digits for radix number
+
+	Translate decimal digits for radix number to target language digits
+
+	Output is list of strings of alien number in target language
+
+Unit tests can pass in lists with single AlienNumberTestCases and then test output.
+
+	__Main__ calls AlienNumberConvertor that takes list of TestCases
+
+
+	Modules
+
+	alien.py - contains AlienNumberConvertor
+	main.py - the standalone program. Contains FileReader and __main__ code block
+	tests.py - contains unit tests for AlienNumberConvertor
+
+	See http://stackoverflow.com/questions/4142151/python-how-to-import-the-class-within-the-same-directory-or-sub-directory
+
+	See http://stackoverflow.com/questions/644821/python-how-to-run-unittest-main-for-all-source-files-in-a-subdirectory on how to run 
+	python unit tests from the command line

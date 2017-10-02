@@ -1,0 +1,7 @@
+AlienNumber/AlienNumber/__pycache__/
+AlwaysTurnLeft/AlwaysTurnLeft/__pycache__/
+AlwaysTurnLeft/AlwaysTurnLeft/tests/__pycache__/
+*.user
+*.suo
+scratch_pad.*
+Notes.*
